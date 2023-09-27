@@ -4,9 +4,9 @@
 
 
 ## Table of Contents
-* [Background]()
-* [Obtaining the Dataset]()
-* [Importing and Visualizing the Data]()
+* [Background](https://github.com/dspataru/leaflet-challenge/blob/main/README.md#background)
+* [Obtaining the Dataset](https://github.com/dspataru/leaflet-challenge/blob/main/README.md#obtaining-the-dataset)
+* [Importing and Visualizing the Data](https://github.com/dspataru/leaflet-challenge/blob/main/README.md#importing-and-visualizing-the-data)
 
 ## Background
 The United States Geological Survey, or USGS for short, is responsible for providing scientific data about natural hazards, the health of our ecosystems and environment, and the impacts of climate and land-use change. Their scientists develop new methods and tools to supply timely, relevant, and useful information about the Earth and its processes.
