@@ -1,6 +1,6 @@
 # leaflet-challenge: data visualization of earthquake data from USGS
 
-![]()
+![USGS logo](https://github.com/dspataru/leaflet-challenge/blob/main/Images/1-Logo.png)
 
 
 ## Table of Contents
