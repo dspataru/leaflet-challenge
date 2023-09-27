@@ -9,17 +9,19 @@ html {
   height: 100%;
 }
 
-.legend {
+.legend { /* style for the legend */
   line-height: 18px;
   color: #555;
   background-color: white;
   border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
-.legend i {
-  width: 25px;
+
+.legend i { /* style for the squares */
+  width: 18px;
   height: 18px;
   float: left;
   opacity: 1;
   background-color: white;
+  margin-right: 15px;
+  margin-left: 10px;
 }

@@ -7,46 +7,14 @@
 // // --------------------------------------------------------------------------------------------------------------------------
 
 
-
-// // // Initialize all the LayerGroups of interest. For this assignment, I group the layers by the magnitude of the Earthquake.
-// // //      All earthquakes (no filter): between 1.0-9.9 magnitude Earthquakes
-// // //      M7.0-9.9: major to extreme Earthquakes
-// // //      M4.0-6.9: light to strong Earthquakes
-// // //      M1.0-3.9: micro to light Earthquakes
-// 
-// // let layers = {
-// //     COMING_SOON: new L.LayerGroup(),
-// //     EMPTY: new L.LayerGroup(),
-// //     LOW: new L.LayerGroup(),
-// //     NORMAL: new L.LayerGroup(),
-// //     OUT_OF_ORDER: new L.LayerGroup()
-// //   };
-
-
-
 // Function to assign the colour to the markers based on depth values using HEX codes.
 function getColour(d) {
-
-    let markerColour = '#74FF00';
-
-    if (d >= 90) {
-        markerColour = '#FF0000';
-    }
-    else if (d >= 70) {
-        markerColour = '#FF7241';
-    }
-    else if (d >= 50) {
-        markerColour = '#FFA641';
-    }
-    else if (d >= 30) {
-        markerColour = '#FFDC41';
-    }
-    else if (d >= 10) {
-        markerColour = '#D4FF00';
-    }
-
-    return markerColour
-};
+    return d >= 90 ? '#FF0000' :
+           d >= 70 ? '#FF7241' :
+           d >= 50 ? '#FFA641' :
+           d >= 30 ? '#FFDC41' :
+           d >= 10 ? '#D4FF00' : '#74FF00';
+}
 
 
 // Create a map that plots all earthquakes from the dataset based on their longitude and latitude.
@@ -64,7 +32,7 @@ function createMap(earthquakes) {
     // Create a baseMaps object to hold the streetmap layer.
     let baseMaps = {
         "Street Map": streetmap,
-        "Topographic Map": topomap
+    //  "Topographic Map": topomap
     };
 
     // Create an overlayMaps object to hold the bikeStations layer.
@@ -74,15 +42,15 @@ function createMap(earthquakes) {
 
     // Create the map object with options.
     let earthquakeMap = L.map('map', {  // the div id that holds the map is 'map'
-        center: [40.73, -74.0059],      // coordinates of where to zoom the map into
-        zoom: 2.5,                        // want view of the World map
-        layers: [streetmap, topomap, earthquakes]
+        center: [40.73, -74.0059],      // coordinates of where to zoom the map into (this is chosen arbitrarily)
+        zoom: 2.5,                       
+        layers: [streetmap, earthquakes]
     });
 
     // Create a layer control, and pass it baseMaps and overlayMaps. Add the layer control to the map.
-    L.control.layers(baseMaps, overlayMaps, {
-        collapsed: false
-    }).addTo(earthquakeMap);
+    // L.control.layers(baseMaps, overlayMaps, {
+    //     collapsed: false
+    // }).addTo(earthquakeMap);
 
     // Create a legend that will provide context for your map data.
     let legend = L.control({ position: "bottomright" });
@@ -94,7 +62,7 @@ function createMap(earthquakes) {
 
         for (let i = 0; i < categories.length; i++) {
         div.innerHTML +=
-            '<i style="background:' + colors[i] + '"></i> ' + categories[i] + '<br>';
+            '<i style="background:' + colors[i] + '"></i>' + categories[i] + '&nbsp; &nbsp; <br>';
         }
 
         return div;
